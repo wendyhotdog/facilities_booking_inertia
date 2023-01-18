@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
     <div
         class="px-3 md:lg:xl:px-40 bg-cover border-t border-b py-20 bg-opacity-10"
@@ -295,9 +293,6 @@
         <div
             class="w-full bg-slate-50 shadow-xl shadow-teal-300 py-10 px-20 items-center"
         >
-            <!-- <p class=" text-white"> <span class="text-4xl font-medium">Still Confused ?</span> <br> <span class="text-lg">Book For Free Career Consultation Today ! </span></p>
-        <button class="px-5 py-3  font-medium text-slate-700 shadow-xl  hover:bg-white duration-150  bg-yellow-400">BOOK AN APPOINTMENT </button> -->
-
             <!-- searchbar -->
             <div class="p-4">
                 <label for="table-search" class="sr-only">Search</label>
@@ -331,176 +326,23 @@
             <div
                 class="mx-auto grid max-w-6xl py-6 grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
             >
-                <article
-                    class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl"
-                >
-                    <a href="#">
-                        <div
-                            class="relative flex items-end overflow-hidden rounded-xl max-h-24"
-                        >
-                            <img
-                                src="https://www.ioicitymall.com.my/data/images/item/img_5814810_slide2.jpg"
-                                alt="Hotel Photo"
-                            />
-                            <div
-                                class="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    class="h-4 w-4"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                                    />
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div class="mt-1 p-2">
-                            <h2 class="text-slate-700">IOI City Mall</h2>
-                            <p class="mt-1 text-sm text-slate-400">
-                                IOI City, Putrajaya
-                            </p>
-
-                            <div class="mt-3 flex items-end justify-between">
-                                <p>
-                                    <span
-                                        class="text-lg font-bold text-teal-600"
-                                        >RM30</span
-                                    >
-                                    <span class="text-sm text-slate-400"
-                                        >/hour</span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-                <article
-                    class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl"
-                >
-                    <a href="#">
-                        <div
-                            class="relative flex items-end overflow-hidden rounded-xl max-h-24"
-                        >
-                            <img
-                                src="https://media.timeout.com/images/101578307/image.jpg"
-                                alt="Hotel Photo"
-                            />
-                            <div
-                                class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="h-5 w-5 text-yellow-400"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                    />
-                                </svg>
-                                <span class="ml-1 text-sm text-slate-400"
-                                    >4.9</span
-                                >
-                            </div>
-                        </div>
-
-                        <div class="mt-1 p-2">
-                            <h2 class="text-slate-700">Sportsplanet</h2>
-                            <p class="mt-1 text-sm text-slate-400">
-                                Subang Jaya, Selangor
-                            </p>
-
-                            <div class="mt-3 flex items-end justify-between">
-                                <p>
-                                    <span
-                                        class="text-lg font-bold text-teal-600"
-                                        >RM100</span
-                                    >
-                                    <span class="text-sm text-slate-400"
-                                        >/hour</span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-
-                <article
-                    class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl"
-                >
-                    <a href="#">
-                        <div
-                            class="relative flex items-end overflow-hidden rounded-xl max-h-24"
-                        >
-                            <img
-                                src="https://fastly.4sqi.net/img/general/600x600/15917023_cN2psxxhSYekGhM_3WvnMjD-2b9MhPxSChLceFzIn1Q.jpg"
-                                alt="Hotel Photo"
-                            />
-                        </div>
-
-                        <div class="mt-1 p-2">
-                            <h2 class="text-slate-700">Gem-In Mall</h2>
-                            <p class="mt-1 text-sm text-slate-400">
-                                Cyberjaya, Selangor
-                            </p>
-
-                            <div class="mt-3 flex items-end justify-between">
-                                <p>
-                                    <span
-                                        class="text-lg font-bold text-teal-600"
-                                        >RM80</span
-                                    >
-                                    <span class="text-sm text-slate-400"
-                                        >/hour</span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-
-                <article
-                    class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl"
-                >
-                    <a href="#">
-                        <div
-                            class="relative flex items-end overflow-hidden rounded-xl max-h-24"
-                        >
-                            <img
-                                src="https://lh5.googleusercontent.com/p/AF1QipO2wzFV9nQ1s9MYWiahHBesjc40BxrxBcOGGpDk=w480-h300-k-n"
-                                alt="Hotel Photo"
-                            />
-                        </div>
-
-                        <div class="mt-1 p-2">
-                            <h2 class="text-slate-700">Prima Avenue</h2>
-                            <p class="mt-1 text-sm text-slate-400">
-                                Cyberjaya, Selangor
-                            </p>
-
-                            <div class="mt-3 flex items-end justify-between">
-                                <p>
-                                    <span
-                                        class="text-lg font-bold text-teal-600"
-                                        >RM23</span
-                                    >
-                                    <span class="text-sm text-slate-400"
-                                        >/hour</span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </article>
+                <div v-for="facility in facilities" :key="facility">
+                    <FacilityCard :facility="facility" />
+                </div>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+import { defineComponent } from "vue";
+import FacilityCard from "@/Components/Facility/FacilityCard.vue";
+
+export default defineComponent({
+    name: "Home",
+    components: {
+        FacilityCard,
+    },
+    props: ["facilities"],
+});
+</script>
