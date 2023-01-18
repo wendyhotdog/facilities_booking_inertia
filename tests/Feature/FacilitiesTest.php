@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Facility;
+use App\Models\FacilityType;
 use App\Models\User;
 use Database\Seeders\InitialSetupSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -33,7 +34,8 @@ class FacilitiesTest extends TestCase
     {
         $this->actingAs($user = User::factory()->create());
         $user->assignRole('admin');
-        $facility = Facility::factory()->make();
+        $facilityType = FacilityType::factory()->create();
+        $facility = Facility::factory()->make(['facility_type_id' => $facilityType->id]);
         $this->post('/facilities', $facility->toArray());
         $this->assertDatabaseHas('facilities', $facility->toArray());
     }

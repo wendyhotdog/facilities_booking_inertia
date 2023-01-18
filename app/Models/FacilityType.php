@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class FacilityType extends Model
 {
+    protected $guarded = [];
     use HasFactory;
 }
