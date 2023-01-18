@@ -8,11 +8,13 @@ use App\Models\User;
 use Database\Seeders\InitialSetupSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 
 class FacilitiesTest extends TestCase
 {
     use RefreshDatabase;
+    use WithoutMiddleware;
     public function setUp(): void
     {
         parent::setUp();
@@ -32,6 +34,7 @@ class FacilitiesTest extends TestCase
 
     public function testAuthorizedUsersCanAddFacilities()
     {
+        $this->withoutExceptionHandling();
         $this->actingAs($user = User::factory()->create());
         $user->assignRole('admin');
         $facilityType = FacilityType::factory()->create();

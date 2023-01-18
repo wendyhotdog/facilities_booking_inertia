@@ -16,7 +16,6 @@ class FacilityController extends Controller
     public function store(Request $request)
     {
         $facility = Facility::create($request->all());
-        dd($request->all());
         return redirect()->route('facilities.index');
     }
 }
