@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class RoleSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class RoleSeeder extends Seeder
             'user',
         ];
         foreach ($roles as $role) {
-            \Spatie\Permission\Models\Role::create(['name' => $role]);
+            Role::create(['name' => $role]);
         }
     }
 }
