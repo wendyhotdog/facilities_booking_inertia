@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use App\Models\Facility;
-use App\Models\FacilityType;
 use App\Models\User;
 use Database\Seeders\InitialSetupSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -36,8 +35,7 @@ class FacilitiesTest extends TestCase
         $this->withoutMiddleware();
         $this->actingAs($user = User::factory()->create());
         $user->assignRole('admin');
-        $facilityType = FacilityType::factory()->create();
-        $facility = Facility::factory()->make(['facility_type_id' => $facilityType->id]);
+        $facility = Facility::factory()->make();
         $this->post('/facilities', $facility->toArray());
         $this->assertDatabaseHas('facilities', $facility->toArray());
     }
@@ -48,9 +46,8 @@ class FacilitiesTest extends TestCase
         $this->withoutMiddleware();
         $this->actingAs($user = User::factory()->create());
         $user->assignRole('admin');
-        $facilityType = FacilityType::factory()->create();
-        $facilityUpdate = Facility::factory()->make(['facility_type_id' => $facilityType->id]);
-        $facility = Facility::factory()->create(['facility_type_id' => $facilityType->id]);
+        $facilityUpdate = Facility::factory()->make();
+        $facility = Facility::factory()->create();
         $this->post('/facilities/' . $facility->id, $facilityUpdate->toArray());
         $this->assertDatabaseHas('facilities', $facilityUpdate->toArray());
     }
@@ -61,8 +58,7 @@ class FacilitiesTest extends TestCase
         $this->withoutMiddleware();
         $this->actingAs($user = User::factory()->create());
         $user->assignRole('admin');
-        $facilityType = FacilityType::factory()->create();
-        $facility = Facility::factory()->create(['facility_type_id' => $facilityType->id]);
+        $facility = Facility::factory()->create();
         $this->delete('/facilities/' . $facility->id);
         $this->assertDatabaseMissing('facilities', $facility->toArray());
     }

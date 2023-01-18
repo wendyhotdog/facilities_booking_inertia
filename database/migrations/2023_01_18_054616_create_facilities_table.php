@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->integer('capacity');
             $table->float('rate_per_hour');
-            $table->foreignId('facility_type_id')->constrained();
+            // $table->foreignId('facility_type_id')->constrained();
             $table->timestamps();
         });
     }

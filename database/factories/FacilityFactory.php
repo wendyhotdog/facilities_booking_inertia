@@ -22,7 +22,6 @@ class FacilityFactory extends Factory
             'image' => $this->faker->imageUrl,
             'capacity' => $this->faker->numberBetween(1, 100),
             'rate_per_hour' => $this->faker->randomFloat(2, 1, 100),
-            'facility_type_id' => \App\Models\FacilityType::factory(),
         ];
     }
 }
