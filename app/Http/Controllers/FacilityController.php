@@ -40,4 +40,12 @@ class FacilityController extends Controller
         $facility->delete();
         return redirect()->route('facilities.index');
     }
+
+    public function show($id)
+    {
+        $facility = Facility::find($id);
+        return inertia('Facility/Show', [
+            'facility' => $facility,
+        ]);
+    }
 }

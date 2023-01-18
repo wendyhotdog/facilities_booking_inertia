@@ -62,4 +62,14 @@ class FacilitiesTest extends TestCase
         $this->delete('/facilities/' . $facility->id);
         $this->assertDatabaseMissing('facilities', $facility->toArray());
     }
+
+    public function testUserCanCheckFacilityDetails()
+    {
+        $this->withoutExceptionHandling();
+        $this->withoutMiddleware();
+        $this->actingAs($user = User::factory()->create());
+        $facility = Facility::factory()->create();
+        $this->get('/facilities/' . $facility->id);
+        $this->assertDatabaseHas('facilities', $facility->toArray());
+    }
 }

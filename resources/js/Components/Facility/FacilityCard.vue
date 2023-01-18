@@ -1,6 +1,6 @@
 <template>
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-        <a href="#">
+        <a :href="route('facilities.show', facility.id)">
             <div
                 class="relative flex items-end overflow-hidden rounded-xl max-h-24"
             >
@@ -45,7 +45,7 @@
 </template>
 <script>
 import { defineComponent } from "vue";
-
+import NavLink from "@/Components/NavLink.vue";
 export default defineComponent({
     name: "FacilityCard",
     props: ["facility"],

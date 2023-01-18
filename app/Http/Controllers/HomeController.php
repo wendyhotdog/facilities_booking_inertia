@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $facilities = Facility::latest()->get();
+        $facilities = Facility::latest()->take(5)->get();
         return inertia('Auth/Home', [
             'facilities' => $facilities,
         ]);
