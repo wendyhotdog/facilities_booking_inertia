@@ -17,7 +17,10 @@ class FacilityTypeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'description' => $this->faker->text,
+            'color' => $this->faker->hexColor,
+            'image' => $this->faker->imageUrl,
         ];
     }
 }

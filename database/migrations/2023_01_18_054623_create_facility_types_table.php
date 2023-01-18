@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('facility_types', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('image')->nullable();
+            $table->string('description')->nullable();
+            $table->string('color')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

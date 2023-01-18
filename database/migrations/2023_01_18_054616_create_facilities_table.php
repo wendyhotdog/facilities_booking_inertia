@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->string('image')->nullable();
+            $table->integer('capacity');
+            $table->float('rate_per_hour');
+            $table->foreignId('facility_type_id')->constrained();
             $table->timestamps();
         });
     }
