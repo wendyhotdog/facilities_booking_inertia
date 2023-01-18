@@ -32,10 +32,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('facilities', [FacilityController::class, 'index'])->name('facilities.index');
-Route::get('facilities/create', [FacilityController::class, 'create'])->name('facilities.create');
-Route::post('facilities', [FacilityController::class, 'store'])->name('facilities.store');
-
-
 require __DIR__ . '/auth.php';
 require __DIR__ . '/facilities.php';
+require __DIR__ . '/reservations.php';

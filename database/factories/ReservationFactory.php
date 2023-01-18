@@ -17,7 +17,14 @@ class ReservationFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'facility_id' => \App\Models\Facility::factory(),
+            'user_id' => \App\Models\User::factory(),
+            'purpose' => $this->faker->sentence,
+            'status' => $this->faker->randomElement(['pending', 'approved', 'rejected']),
+            'remarks' => $this->faker->sentence,
+            'start_time' => $this->faker->time(),
+            'end_time' => $this->faker->time(),
+            'reservation_date' => $this->faker->date(),
         ];
     }
 }

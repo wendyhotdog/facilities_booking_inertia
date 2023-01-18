@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('facility_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->string('purpose');
+            $table->string('status')->default('pending');
+            $table->string('remarks')->nullable();
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->date('reservation_date');
+            $table->float('total')->default(0);
             $table->timestamps();
         });
     }
