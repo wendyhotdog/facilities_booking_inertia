@@ -74,7 +74,9 @@
                         <h2
                             class="text-xl font-semibold leading-6 text-gray-800"
                         >
-                            9 P.M
+                            {{ new Date(this.date).toDateString() }}
+                            {{ this.time }}
+                            <!-- Convert date into standard format -->
                         </h2>
                         <p
                             class="text-xl md:mt-0 mt-4 leading-6 text-lg font-bold text-teal-600"
