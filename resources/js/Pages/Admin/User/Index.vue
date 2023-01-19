@@ -1,5 +1,5 @@
 <template>
-    <Head title="Dashboard" />
+    <Head title="User" />
 
     <AuthenticatedLayout>
         <template #header>

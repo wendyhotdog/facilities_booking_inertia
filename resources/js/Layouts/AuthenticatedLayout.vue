@@ -34,8 +34,12 @@ const showingNavigationDropdown = ref(false);
                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
                             >
                                 <NavLink
-                                    :href="route('dashboard')"
-                                    :active="route().current('dashboard')"
+                                    :href="route('admin.facilities.index')"
+                                    :active="
+                                        route().current(
+                                            'admin.facilities.index'
+                                        )
+                                    "
                                 >
                                     Facilities
                                 </NavLink>
@@ -44,8 +48,12 @@ const showingNavigationDropdown = ref(false);
                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
                             >
                                 <NavLink
-                                    :href="route('dashboard')"
-                                    :active="route().current('dashboard')"
+                                    :href="route('admin.reservations.index')"
+                                    :active="
+                                        route().current(
+                                            'admin.reservations.index'
+                                        )
+                                    "
                                 >
                                     Reservations
                                 </NavLink>
@@ -54,8 +62,10 @@ const showingNavigationDropdown = ref(false);
                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
                             >
                                 <NavLink
-                                    :href="route('dashboard')"
-                                    :active="route().current('dashboard')"
+                                    :href="route('admin.users.index')"
+                                    :active="
+                                        route().current('admin.users.index')
+                                    "
                                 >
                                     Users
                                 </NavLink>

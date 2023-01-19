@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return inertia('User/Index', [
+        return inertia('Admin/User/Index', [
             'users' => User::all(),
         ]);
     }
