@@ -5,20 +5,15 @@ namespace App\Http\Controllers;
 use App\Enums\ReservationStatusEnums;
 use App\Http\Requests\ReservationRequest;
 use App\Models\Reservation;
+use App\Service\ReservationService;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-    public function store(ReservationRequest $request)
+    public function store(Request $request)
     {
-        $isAvailable = Reservation::where('facility_id', $request->facility_id)
-            ->where('start_time', $request->start_time)
-            ->exists();
-        if ($isAvailable) {
-            return back()->with('error', 'Slot is already booked');
-        }
-
-        $reservation = $request->user()->reservations()->create($request->validated());
+        $reservationService = new ReservationService();
+        $reservation = $reservationService->createReservation($request);
         return redirect()->route('reservations.show', $reservation);
     }
     public function show($id)

@@ -1,5 +1,6 @@
 <template>
     <div
+        v-if="!activeComponent"
         class="w-full bg-slate-50 shadow-xl shadow-teal-300 py-10 px-20 items-center"
     >
         <h1 class="text-2xl font-medium mb-5">Choose your slot</h1>
@@ -103,10 +104,24 @@
             </div>
         </div>
     </div>
+    <div v-else>
+        <Create
+            :is="activeComponent"
+            :facility="facility"
+            :start_time="this.time"
+            :end_time="endTime"
+            :reservation_date="this.date"
+            :duration="this.duration"
+        />
+    </div>
 </template>
 <script>
 import { defineComponent } from "vue";
+import Create from "@/Pages/Payment/Create.vue";
 export default defineComponent({
+    components: {
+        Create,
+    },
     props: {
         facility: {
             type: Object,
@@ -118,6 +133,7 @@ export default defineComponent({
             date: new Date().toISOString().substr(0, 10),
             time: new Date().toISOString().substr(11, 5),
             duration: null,
+            activeComponent: false,
         };
     },
     computed: {
@@ -137,15 +153,7 @@ export default defineComponent({
     },
     methods: {
         submitForm() {
-            // Create a new form data object
-            const formData = new FormData();
-            // Append the form data with the values
-            formData.append("facility_id", this.facility.id);
-            formData.append("reservation_date", this.date);
-            formData.append("start_time", this.time);
-            formData.append("end_time", this.endTime);
-            // Send the form data to the store method
-            this.$inertia.post("/reservations", formData);
+            this.activeComponent = true;
         },
     },
 });

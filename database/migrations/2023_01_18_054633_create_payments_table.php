@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->string('method');
+            $table->string('status')->default('pending');
+            $table->float('amount')->default(0);
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('reservation_id')->constrained();
+            $table->string('remarks')->nullable();
             $table->timestamps();
         });
     }
