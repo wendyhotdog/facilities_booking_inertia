@@ -18,7 +18,7 @@ class ReservationController extends Controller
     }
     public function show($id)
     {
-        $reservation = Reservation::findOrFail($id);
+        $reservation = Reservation::with('facility')->findOrFail($id);
         return inertia('Reservation/Show', compact('reservation'));
     }
 
