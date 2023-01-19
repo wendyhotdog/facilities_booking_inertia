@@ -36,3 +36,4 @@ require __DIR__ . '/auth.php';
 require __DIR__ . '/facilities.php';
 require __DIR__ . '/reservations.php';
 require __DIR__ . '/payments.php';
+require __DIR__ . '/admin.php';
