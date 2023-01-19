@@ -78,11 +78,20 @@
                             {{ this.time }}
                             <!-- Convert date into standard format -->
                         </h2>
-                        <p
-                            class="text-xl md:mt-0 mt-4 leading-6 text-lg font-bold text-teal-600"
-                        >
-                            <span class="text-base">RM {{ total }}</span>
-                        </p>
+                        <div class="flex flex-col justify-evenly">
+                            <p
+                                class="text-xl md:mt-0 mt-4 leading-6 text-lg font-bold text-teal-600"
+                            >
+                                <span class="text-base">RM {{ total }}</span>
+                            </p>
+                            <button
+                                class="p-2 bg-green-600 rounded text-white"
+                                @click="submitForm"
+                                v-if="allDataFilled"
+                            >
+                                Confirm Booking
+                            </button>
+                        </div>
                     </div>
                     <p class="md:w-80 text-base leading-6 text-gray-600">
                         {{ this.time }} - {{ endTime }}
@@ -121,6 +130,22 @@ export default defineComponent({
             const time = new Date("1970-01-01T" + this.time + "Z").getTime();
             const endTime = new Date(time + this.duration * 60 * 60 * 1000);
             return endTime.toISOString().substr(11, 5);
+        },
+        allDataFilled() {
+            return this.date && this.time && this.duration;
+        },
+    },
+    methods: {
+        submitForm() {
+            // Create a new form data object
+            const formData = new FormData();
+            // Append the form data with the values
+            formData.append("facility_id", this.facility.id);
+            formData.append("reservation_date", this.date);
+            formData.append("start_time", this.time);
+            formData.append("end_time", this.endTime);
+            // Send the form data to the store method
+            this.$inertia.post("/reservations", formData);
         },
     },
 });

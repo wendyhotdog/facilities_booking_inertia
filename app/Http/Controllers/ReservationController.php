@@ -19,7 +19,7 @@ class ReservationController extends Controller
         }
 
         $reservation = $request->user()->reservations()->create($request->validated());
-        // return redirect()->route('reservations.show', $reservation);
+        return redirect()->route('reservations.show', $reservation);
     }
     public function show($id)
     {

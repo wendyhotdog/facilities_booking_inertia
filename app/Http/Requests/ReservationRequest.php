@@ -25,10 +25,9 @@ class ReservationRequest extends FormRequest
     {
         return [
             'facility_id' => 'required|exists:facilities,id',
-            'user_id' => 'required|exists:users,id',
-            'purpose' => 'required',
-            'status' => 'required',
-            'remarks' => 'required',
+            // 'user_id' => 'required|exists:users,id',
+            // 'status' => 'required',
+            // 'remarks' => 'required',
             'start_time' => 'required',
             'end_time' => 'required',
             'reservation_date' => 'required',

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('facility_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->string('purpose');
             $table->string('status')->default('pending');
             $table->string('remarks')->nullable();
             $table->time('start_time');
