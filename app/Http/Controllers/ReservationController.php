@@ -29,4 +29,10 @@ class ReservationController extends Controller
         $reservation->save();
         return redirect()->route('home.index');
     }
+
+    public function index()
+    {
+        $reservations = Reservation::where('user_id', auth()->user()->id)->with('facility')->latest()->get();
+        return inertia('Reservation/Index', compact('reservations'));
+    }
 }

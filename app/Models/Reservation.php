@@ -9,4 +9,9 @@ class Reservation extends Model
 {
     protected $guarded = [];
     use HasFactory;
+
+    public function facility()
+    {
+        return $this->belongsTo(Facility::class);
+    }
 }

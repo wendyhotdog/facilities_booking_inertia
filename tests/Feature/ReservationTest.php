@@ -83,4 +83,15 @@ class ReservationTest extends TestCase
             'status' => \App\Enums\ReservationStatusEnums::CANCELLED
         ]);
     }
+    public function testUserCanViewBookingsMade()
+    {
+        $this->withoutExceptionHandling();
+        $user = \App\Models\User::factory()->create();
+        $this->actingAs($user);
+        $reservation = \App\Models\Reservation::factory()->create([
+            'user_id' => $user->id,
+        ]);
+        $this->get(route('reservations.index'))
+            ->assertStatus(200);
+    }
 }
