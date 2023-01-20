@@ -38,6 +38,11 @@
                                 <th
                                     class="text-left p-3 text-gray-600 dark:text-gray-200"
                                 >
+                                    Roles
+                                </th>
+                                <th
+                                    class="text-left p-3 text-gray-600 dark:text-gray-200"
+                                >
                                     Actions
                                 </th>
                             </tr>
@@ -61,9 +66,21 @@
                                 <td
                                     class="p-3 text-gray-700 dark:text-gray-200"
                                 >
+                                    <span
+                                        v-for="role in user.roles"
+                                        :key="role.id"
+                                        class="bg-blue-500 text-white px-2 py-1 rounded-sm"
+                                        >{{ role.name }}</span
+                                    >
+                                </td>
+                                <td
+                                    class="p-3 text-gray-700 dark:text-gray-200"
+                                >
                                     <a
                                         class="bg-blue-500 text-white px-2 py-1 rounded-sm"
-                                        @click="onView(user.id)"
+                                        :href="
+                                            route('admin.users.show', user.id)
+                                        "
                                         >View</a
                                     >
                                     <a
@@ -97,15 +114,14 @@ export default defineComponent({
             required: true,
         },
     },
+    data() {
+        return {
+            editMode: false,
+        };
+    },
     methods: {
-        onView(id) {
-            // navigate to view page for user with id
-        },
         onEdit(id) {
-            // navigate to edit page for user with id
-        },
-        onDelete(id) {
-            // delete user with id
+            this.editMode = true;
         },
     },
 });

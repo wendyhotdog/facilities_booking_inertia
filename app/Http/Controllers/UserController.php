@@ -11,7 +11,7 @@ class UserController extends Controller
     public function index()
     {
         return inertia('Admin/User/Index', [
-            'users' => User::all(),
+            'users' => User::with('roles')->latest()->get(),
         ]);
     }
 
@@ -23,7 +23,7 @@ class UserController extends Controller
     public function show($id)
     {
         return inertia('Admin/User/Show', [
-            'user' => User::find($id),
+            'user' => User::with('roles')->find($id),
         ]);
     }
 
