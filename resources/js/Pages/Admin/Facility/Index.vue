@@ -12,13 +12,6 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-
-                <!--modal start-->
-
-                
-
-                <!--modal end-->
-
                 <div
                     class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"
                 >
@@ -34,6 +27,11 @@
                                     class="text-left p-3 text-gray-600 dark:text-gray-200"
                                 >
                                     Description
+                                </th>
+                                <th
+                                    class="text-left p-3 text-gray-600 dark:text-gray-200"
+                                >
+                                    Rate (per hour)
                                 </th>
                                 <th
                                     class="text-left p-3 text-gray-600 dark:text-gray-200"
@@ -61,9 +59,19 @@
                                 <td
                                     class="p-3 text-gray-700 dark:text-gray-200"
                                 >
+                                    RM {{ facility.rate_per_hour }}
+                                </td>
+                                <td
+                                    class="p-3 text-gray-700 dark:text-gray-200"
+                                >
                                     <a
                                         class="bg-blue-500 text-white px-2 py-1 rounded-sm"
-                                        @click="onView(facility.id)"
+                                        :href="
+                                            route(
+                                                'admin.facilities.show',
+                                                facility.id
+                                            )
+                                        "
                                         >View</a
                                     >
                                     <a

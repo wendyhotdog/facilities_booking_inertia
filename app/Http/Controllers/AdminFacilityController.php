@@ -24,4 +24,15 @@ class AdminFacilityController extends Controller
     {
         return inertia('Admin/Facility/Create');
     }
+
+    public function update(Request $request, $id)
+    {
+        $facility = \App\Models\Facility::find($id);
+        $facility->name = $request->name;
+        $facility->description = $request->description;
+        $facility->rate_per_hour = $request->rate_per_hour;
+        $facility->save();
+
+        return redirect()->route('admin.facilities.show', $facility->id);
+    }
 }

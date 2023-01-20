@@ -14,12 +14,12 @@ Route::middleware(['middleware' => 'role:admin|super-admin'])->prefix('admin')->
         Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
         // Facilities
         Route::get('/facilities', [AdminFacilityController::class, 'index'])->name('facilities.index');
-        Route::get('/facilities/{id}', [AdminFacilityController::class, 'show'])->name('facilities.show');
         Route::get('/facilities/create', [AdminFacilityController::class, 'create'])->name('facilities.create');
+        Route::get('/facilities/show/{id}', [AdminFacilityController::class, 'show'])->name('facilities.show');
+        Route::post('/facilities/update/{id}', [AdminFacilityController::class, 'update'])->name('facilities.update');
 
         // Reservations
         Route::get('/reservations', [AdminReservationController::class, 'index'])->name('reservations.index');
-        Route::get('/reservations/create', [AdminReservationController::class, 'create'])->name('reservations.create');
         Route::get('/reservations/{id}', [AdminReservationController::class, 'show'])->name('reservations.show');
         Route::post('/payment/approve/{id}', [AdminReservationController::class, 'approve'])->name('payment.approve');
     });
