@@ -34,6 +34,7 @@ const showingNavigationDropdown = ref(false);
                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
                             >
                                 <NavLink
+                                    v-if="is('admin | super-admin')"
                                     :href="route('admin.facilities.index')"
                                     :active="
                                         route().current(
@@ -48,6 +49,7 @@ const showingNavigationDropdown = ref(false);
                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
                             >
                                 <NavLink
+                                    v-if="is('admin | super-admin')"
                                     :href="route('admin.reservations.index')"
                                     :active="
                                         route().current(
@@ -62,6 +64,7 @@ const showingNavigationDropdown = ref(false);
                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
                             >
                                 <NavLink
+                                    v-if="is('admin | super-admin')"
                                     :href="route('admin.users.index')"
                                     :active="
                                         route().current('admin.users.index')
