@@ -73,6 +73,21 @@ const showingNavigationDropdown = ref(false);
                                     Users
                                 </NavLink>
                             </div>
+
+                            <div
+                                class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
+                            >
+                                <NavLink
+                                    :href="route('reservations.index')"
+                                    :active="
+                                        route().current(
+                                            'admin.facilities.index'
+                                        )
+                                    "
+                                >
+                                    Reservations History
+                                </NavLink>
+                            </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">

@@ -31,6 +31,7 @@ class PaymentController extends Controller
                 'receipt_image_url' => $request->receipt_image_url,
             ]);
             DB::commit();
+            return redirect()->route('home.index');
         } catch (\Exception $e) {
             DB::rollBack();
             dd($e->getMessage());
