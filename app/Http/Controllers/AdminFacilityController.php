@@ -35,4 +35,17 @@ class AdminFacilityController extends Controller
 
         return redirect()->route('admin.facilities.show', $facility->id);
     }
+
+    public function store(Request $request)
+    {
+        $facility = new \App\Models\Facility();
+        $facility->name = $request->name;
+        $facility->description = $request->description;
+        $facility->rate_per_hour = $request->rate_per_hour;
+        $facility->image = $request->image ?? null;
+        $facility->capacity = $request->capacity ?? null;
+        $facility->save();
+
+        return redirect()->route('admin.facilities.show', $facility->id);
+    }
 }

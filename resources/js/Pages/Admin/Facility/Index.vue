@@ -74,11 +74,6 @@
                                         "
                                         >View</a
                                     >
-                                    <a
-                                        class="bg-green-500 text-white px-2 py-1 rounded-sm"
-                                        @click="onEdit(facility.id)"
-                                        >Edit</a
-                                    >
                                 </td>
                             </tr>
                         </tbody>

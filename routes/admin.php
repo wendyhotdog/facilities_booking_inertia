@@ -15,6 +15,7 @@ Route::middleware(['middleware' => 'role:admin|super-admin'])->prefix('admin')->
         // Facilities
         Route::get('/facilities', [AdminFacilityController::class, 'index'])->name('facilities.index');
         Route::get('/facilities/create', [AdminFacilityController::class, 'create'])->name('facilities.create');
+        Route::post('/facilities/store', [AdminFacilityController::class, 'store'])->name('facilities.store');
         Route::get('/facilities/show/{id}', [AdminFacilityController::class, 'show'])->name('facilities.show');
         Route::post('/facilities/update/{id}', [AdminFacilityController::class, 'update'])->name('facilities.update');
 

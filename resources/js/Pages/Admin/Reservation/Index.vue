@@ -83,7 +83,7 @@
                                     class="p-3 text-gray-700 dark:text-gray-200"
                                 >
                                     <span
-                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm dark:bg-green-700 dark:text-green-100"
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-blue-100 rounded-sm dark:bg-blue-700 dark:text-green-100"
                                         >{{ reservation.status }}</span
                                     >
                                 </td>
@@ -99,11 +99,6 @@
                                             )
                                         "
                                         >View</a
-                                    >
-                                    <a
-                                        class="bg-green-500 text-white px-2 py-1 rounded-sm"
-                                        @click="onEdit(reservation.id)"
-                                        >Edit</a
                                     >
                                 </td>
                             </tr>
