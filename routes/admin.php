@@ -9,9 +9,9 @@ Route::middleware(['middleware' => 'role:admin|super-admin'])->prefix('admin')->
     Route::middleware('auth')->name('admin.')->group(function () {
         // Users
         Route::get('/users', [UserController::class, 'index'])->name('users.index');
-        Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
         Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-
+        Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+        Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
         // Facilities
         Route::get('/facilities', [AdminFacilityController::class, 'index'])->name('facilities.index');
         Route::get('/facilities/{id}', [AdminFacilityController::class, 'show'])->name('facilities.show');

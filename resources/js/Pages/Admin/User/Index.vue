@@ -3,11 +3,18 @@
 
     <AuthenticatedLayout>
         <template #header>
-            <h2
-                class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
-            >
-                Users
-            </h2>
+            <div class="flex justify-between">
+                <h2
+                    class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
+                >
+                    Users
+                </h2>
+                <a :href="route('admin.users.create')">
+                    <button class="text-white bg-blue-600 p-[5px] rounded-sm">
+                        Add New User
+                    </button>
+                </a>
+            </div>
         </template>
 
         <div class="py-12">
