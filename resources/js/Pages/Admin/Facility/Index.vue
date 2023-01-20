@@ -3,11 +3,19 @@
 
     <AuthenticatedLayout>
         <template #header>
-            <h2
-                class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
-            >
-                Facilities
-            </h2>
+            <div class="flex justify-between">
+                <h2
+                    class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
+                >
+                    Facilities
+                </h2>
+                <button
+                    class="p-2 text-white bg-blue-500 rounded"
+                    @click="createFacility"
+                >
+                    Add new facility
+                </button>
+            </div>
         </template>
 
         <div class="py-12">
@@ -101,14 +109,8 @@ export default defineComponent({
         },
     },
     methods: {
-        onView(id) {
-            // navigate to view page for user with id
-        },
-        onEdit(id) {
-            // navigate to edit page for user with id
-        },
-        onDelete(id) {
-            // delete user with id
+        createFacility() {
+            this.$inertia.visit(route("admin.facilities.create"));
         },
     },
 });
