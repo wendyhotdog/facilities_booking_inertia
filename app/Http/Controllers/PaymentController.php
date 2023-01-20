@@ -28,6 +28,7 @@ class PaymentController extends Controller
                 'method' => $request->method,
                 'user_id' => auth()->user()->id,
                 'status' => 'pending',
+                'receipt_image_url' => $request->receipt_image_url,
             ]);
             DB::commit();
         } catch (\Exception $e) {

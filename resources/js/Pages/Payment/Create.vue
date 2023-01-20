@@ -74,7 +74,12 @@
                         Upload or drag & drop your file SVG, PNG, JPG or GIF.
                     </p>
 
-                    <input id="dropzone-file" type="file" class="hidden" />
+                    <input
+                        id="dropzone-file"
+                        type="file"
+                        class="hidden"
+                        @change="onFileChange"
+                    />
                 </label>
 
                 <div
@@ -151,6 +156,7 @@ export default defineComponent({
     data() {
         return {
             paymentType: "bank_transfer",
+            receipt: null,
         };
     },
     computed: {
@@ -168,7 +174,19 @@ export default defineComponent({
 
                 method: this.paymentType,
                 amount: this.total,
+                receipt_image_url: this.receipt,
             });
+        },
+        onFileChange(e) {
+            const file = e.target.files[0];
+            this.receipt = file;
+            // Change the dropzone-file to a preview of the image
+            const dropzone = document.getElementById("dropzone-file");
+            dropzone.classList.add("hidden");
+            const preview = document.createElement("img");
+            preview.src = URL.createObjectURL(file);
+            preview.classList.add("w-64", "h-64", "object-cover");
+            dropzone.parentNode.insertBefore(preview, dropzone.nextSibling);
         },
     },
 });

@@ -19,6 +19,8 @@ Route::middleware(['middleware' => 'role:admin|super-admin'])->prefix('admin')->
 
         // Reservations
         Route::get('/reservations', [AdminReservationController::class, 'index'])->name('reservations.index');
+        Route::get('/reservations/create', [AdminReservationController::class, 'create'])->name('reservations.create');
         Route::get('/reservations/{id}', [AdminReservationController::class, 'show'])->name('reservations.show');
+        Route::post('/payment/approve/{id}', [AdminReservationController::class, 'approve'])->name('payment.approve');
     });
 });

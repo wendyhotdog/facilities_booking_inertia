@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('reservation_id')->constrained();
             $table->string('remarks')->nullable();
+            $table->string('receipt_image_url')->nullable();
             $table->timestamps();
         });
     }
